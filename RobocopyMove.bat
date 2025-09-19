@@ -1,1 +1,60 @@
+@echo off
+title Robocopy Move Tool
+color 0A
+
+echo ======================================================
+echo         Robocopy Move Tool (Safe & User-Friendly)
+echo ======================================================
+echo This script moves a folder to another location.
+echo It will create the same folder name inside the target
+echo and move all contents safely using Robocopy.
+echo.
+echo Example:
+echo   Source: D:\Software\Fonts
+echo   Target: C:\Users\Haider\Downloads\Work Folder
+echo   Result: C:\Users\Haider\Downloads\Work Folder\Fonts\
+echo ======================================================
+echo.
+
+:: Ask for source folder
+set /p src=Enter FULL source folder path: 
+
+:: Check if source exists
+if not exist "%src%" (
+    echo [ERROR] Source folder does not exist!
+    pause
+    exit /b
+)
+
+:: Ask for destination folder
+set /p dst=Enter FULL destination folder path: 
+
+:: Check if destination exists, create if not
+if not exist "%dst%" (
+    echo [INFO] Destination folder does not exist, creating...
+    mkdir "%dst%"
+)
+
+:: Extract only folder name from the source path
+for %%A in ("%src:~0,-1%") do set foldername=%%~nxA
+
+:: Build final destination path
+set finaldst=%dst%\%foldername%
+
+echo.
+echo ======================================================
+echo Moving "%src%"
+echo To     "%finaldst%"
+echo ======================================================
+echo.
+
+:: Run Robocopy with safe flags
+robocopy "%src%" "%finaldst%" /MOVE /E /R:0 /W:0 /ETA /TEE /LOG+:"%dst%\robocopy_log.txt"
+
+echo.
+echo ======================================================
+echo Move Completed!
+echo Log file saved at: %dst%\robocopy_log.txt
+echo ======================================================
+pause
 
