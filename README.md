@@ -1,27 +1,25 @@
-# Robocopy Move Tool (Batch Script)
+# Robocopy Tools (Batch Scripts)
 
-A simple Windows batch script to **safely move folders** using Robocopy.  
+Two Windows batch scripts to **safely move or copy folders** using Robocopy.  
 - This script preserves the folder name, shows live progress, and creates logs.
 - Good script for moving folders and files from a hard disk with bad sectors or freezing issues
+  
 ---
 
-## ✅ Features
-- Moves an entire folder to another location
-- Preserves folder name in destination
-- Skips bad/unreadable files (does not freeze like Explorer)
-- Shows progress and ETA while moving
-- Creates a log file (`robocopy_log.txt`) in the destination
+## ✅ Scripts
+- **RobocopyMove.bat** → moves a folder (deletes source after success)  
+- **RobocopyCopy.bat** → copies a folder (keeps source intact)  
 
 ---
 
 ## 🔧 Usage
-1. Download or copy the `RobocopyMove.bat` file.
+1. Download the `.bat` file you want (Move or Copy).
 2. Double-click to run.
 3. Enter the **full source folder path** (example: `D:\Software\Fonts`).
 4. Enter the **destination folder path** (example: `C:\Users\Haider\Downloads\Work Folder`).
 5. The script will:
    - Create `Fonts` inside `Work Folder`
-   - Move all files/folders inside `Fonts`
+   - Copy or move all files/folders
    - Show live progress
    - Save a log file in the destination folder
 
@@ -44,4 +42,4 @@ A simple Windows batch script to **safely move folders** using Robocopy.
 
 ## 🖊️ Author
 Made by HAIDER ART
-Free to use and share. Contributions welcome!
+-Free to use and share. Contributions welcome!
