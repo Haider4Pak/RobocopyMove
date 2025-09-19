@@ -1,8 +1,8 @@
 # Robocopy Move Tool (Batch Script)
 
 A simple Windows batch script to **safely move folders** using Robocopy.  
-This script preserves the folder name, shows live progress, and creates logs.
-Good script for moving folders and files from a hard disk with bad sectors or freezing issues
+- This script preserves the folder name, shows live progress, and creates logs.
+- Good script for moving folders and files from a hard disk with bad sectors or freezing issues
 ---
 
 ## ✅ Features
@@ -28,9 +28,9 @@ Good script for moving folders and files from a hard disk with bad sectors or fr
 ---
 
 ## 📌 Example
-Source: D:\Software\Fonts
-Destination: C:\Users\Haider\Downloads\Work Folder
-Result: C:\Users\Haider\Downloads\Work Folder\Fonts\
+- Source: D:\Software\Fonts
+- Destination: C:\Users\Haider\Downloads\Work Folder
+- Result: C:\Users\Haider\Downloads\Work Folder\Fonts\
 
 
 ---
